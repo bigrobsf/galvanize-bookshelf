@@ -1,9 +1,17 @@
+/* jshint esversion: 6 */
+/* jshint node: true */
 'use strict';
 
 module.exports = {
-  development: {},
+  development: {
+    client: 'pg',
+    connection: 'postgres://localhost/bookshelf_dev'
+  },
 
-  test: {},
+  test: {
+    client: 'pg',
+    connection: 'postgres://localhost/bookshelf_test'
+  },
 
   production: {}
 };

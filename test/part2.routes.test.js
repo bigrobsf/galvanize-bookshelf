@@ -1,3 +1,9 @@
+/* jshint esversion: 6 */
+/* jshint devel: true */
+/* jshint node: true */
+/* jshint browser: true */
+/* jshint mocha: true */
+
 'use strict';
 
 process.env.NODE_ENV = 'test';
@@ -149,7 +155,7 @@ suite('part2 routes', () => {
         delete res.body.updatedAt;
       })
       .expect(200, {
-        id: 9,
+        //id: 9,
         title: 'Think Python',
         author: 'Allen B. Downey',
         genre: 'Python',

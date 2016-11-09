@@ -1,4 +1,8 @@
 /* eslint-disable camelcase */
+/* jshint esversion: 6 */
+/* jshint devel: true */
+/* jshint node: true */
+/* jshint browser: true */
 
 'use strict';
 
@@ -65,11 +69,11 @@ suite('part3 routes', () => {
           .where('id', 2)
           .first()
           .then((user) => {
-            const hashedPassword = user.hashed_password;
+            const hashedPassword = user.hashedPassword;
 
-            delete user.hashed_password;
-            delete user.created_at;
-            delete user.updated_at;
+            delete user.hashedPassword;
+            delete user.createdAt;
+            delete user.updatedAt;
 
             assert.deepEqual(user, {
               id: 2,

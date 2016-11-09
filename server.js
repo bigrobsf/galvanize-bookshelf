@@ -1,3 +1,7 @@
+/* jshint esversion: 6 */
+/* jshint devel: true */
+/* jshint node: true */
+/* jshint browser: true */
 'use strict';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -10,7 +14,7 @@ const app = express();
 app.disable('x-powered-by');
 
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 
 switch (app.get('env')) {
@@ -46,10 +50,10 @@ const favorites = require('./routes/favorites');
 const token = require('./routes/token');
 const users = require('./routes/users');
 
-app.use(books);
-app.use(favorites);
-app.use(token);
-app.use(users);
+app.use('/books', books);
+app.use('/favorites', favorites);
+app.use('/token', token);
+app.use('/users', users);
 
 app.use((_req, res) => {
   res.sendStatus(404);
