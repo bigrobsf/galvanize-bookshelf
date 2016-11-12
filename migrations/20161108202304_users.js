@@ -5,9 +5,9 @@ exports.up = function(knex, Promise) {
     table.string('first_name').defaultTo('').notNullable();
     table.string('last_name').defaultTo('').notNullable();
     table.string('email').unique().notNullable();
-    table.string('hashed_password', 60).notNullable();
-    table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable();
-    table.timestamp('updated_at').defaultTo(knex.fn.now()).notNullable();
+    // table.string('hashed_password', 60).notNullable();
+    table.specificType('hashed_password', 'char(60)').notNullable();
+    table.timestamps(true, true);
   });
 };
 

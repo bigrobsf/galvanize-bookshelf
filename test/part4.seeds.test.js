@@ -42,8 +42,9 @@ suite('part4 seeds', () => {
           created_at: new Date('2016-06-29 14:26:16 UTC'),
           updated_at: new Date('2016-06-29 14:26:16 UTC')
         }];
-
+        console.log(actual , "actual");
         for (let i = 0; i < expected.length; i++) {
+
           assert.deepEqual(
             actual[i],
             expected[i],

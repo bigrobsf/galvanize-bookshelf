@@ -58,7 +58,7 @@ suite('part3 migrations', () => {
           },
 
           hashed_password: {
-            type: 'character varying',
+            type: 'character',
             maxLength: 60,
             nullable: false,
             defaultValue: null

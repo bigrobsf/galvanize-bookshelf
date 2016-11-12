@@ -101,7 +101,7 @@ suite('part4 routes favorites', () => {
           delete res.body.createdAt;
           delete res.body.updatedAt;
         })
-        .expect(200, { id: 2, bookId: 2, userId: 1 }, done);
+        .expect(200, { bookId: 2, userId: 1 }, done);
     });
 
     test('DELETE /favorites', (done) => {
