@@ -13,9 +13,9 @@ const { camelizeKeys, decamelizeKeys } = require('humps');
 const router = express.Router();
 
 // =============================================================================
-// GET without token
+// GET with or without token
 router.get('/', (req, res, next) => {
-  if (req.cookies['/token'] === 'cookie.monster.rawr') {
+  if (req.cookies['/token']) {
     res.status(200).json(true);
   } else {
     res.status(200).json(false);
